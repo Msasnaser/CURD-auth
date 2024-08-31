@@ -1,0 +1,32 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Users</h1>
+
+<table class="table">
+    <thead>
+       <tr>
+            <td>UserId</td>
+            <td>UserName</td>
+            <td>Created At</td>
+            <td>IsActive</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                 <td>@item.UserId</td> 
+                <td>@item.UserName</td>
+                <td>@item.CreatedAt</td>
+                <td>@item.IsActive</td>
+                <td>
+                    <a class="btn btn-info" asp-controller="Users" asp-action="RemoveNotActive" asp-route-userId="@item.UserId">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+ </table>

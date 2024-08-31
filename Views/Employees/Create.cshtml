@@ -1,0 +1,24 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Employees</h1>
+
+<form asp-controller="Employees" asp-action="Create">
+    <div class="m-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name"  class="form-control" />
+    </div>
+    <div class="m-3">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="m-3">
+        <label asp-for="Password"></label> 
+        <input asp-for="Password" class="form-control" />
+    </div>
+@*       //حتى نضيف الى الداتا بيس
+ *@    <button type="submit" class="btn btn-outline-info m-3"> Add</button>
+</form>
+

@@ -1,0 +1,20 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<form asp-controller="Users" asp-action="Login">
+    <div class="m-3">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control"/>
+    </div>
+    <div class="m-3">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+    </div>
+
+    <div class="m-3 text-info">@ViewBag.Error</div>
+    <button type="submit" class="btn btn-outline-info m-3">Login</button>
+</form>
